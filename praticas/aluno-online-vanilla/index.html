@@ -1,12 +1,93 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aluno Online</title>
-  </head>
-  <body>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aluno Online</title>
+
+<link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+<h2>Aluno Online</h2>
+
+<nav>
+<ul>
+<li>Dashboard</li>
+<li>Disciplinas</li>
+<li>Notas</li>
+<li>Calendário</li>
+</ul>
+</nav>
+
+</aside>
+
+<!-- CONTEÚDO -->
+<main class="container">
+
+<!-- TOPO -->
+<header class="topbar">
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<div>
+<h1>Olá, Aluno!</h1>
+<h2>Bem-vindo ao portal do aluno</h2>
+</div>
+
+<img src="public/avatar.svg" alt="Avatar do usuário">
+
+</header>
+
+<!-- CARDS -->
+<section class="cards">
+
+<article class="card">
+<h3>Mural de Avisos</h3>
+<ul>
+<li>Inscrição para o projeto de extensão</li>
+<li>Eleição para representante de turma</li>
+</ul>
+</article>
+
+<article class="card">
+<h3>Calendário Acadêmico</h3>
+<ul>
+<li>23/02 - Início do período letivo 2026-1</li>
+<li>25/04 - Prazo final para aplicação da P1</li>
+<li>23/06 - Prazo final para aplicação da P2</li>
+<li>04/07 - Fim do período letivo 2026-1</li>
+</ul>
+</article>
+
+<article class="card">
+<h3>Minhas Disciplinas</h3>
+<ul>
+<li>Construção de Front-End</li>
+<li>Manutenção de Software e DevOps</li>
+<li>Governança de TI</li>
+</ul>
+</article>
+
+</section>
+
+</main>
+
+</div>
+
+<!-- SCRIPT DO MENU -->
+<script>
+function toggleMenu() {
+  document.querySelector('.sidebar').classList.toggle('active');
+}
+</script>
+
+</body>
 </html>
