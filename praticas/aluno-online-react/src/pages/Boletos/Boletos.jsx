@@ -1,28 +1,13 @@
-import './Boletos.css';
+import Listagem from '../../components/Listagem/Listagem';
 
 function Boletos() {
-  return (
-    <section className="boletos">
-      <h2>Listagem de Boletos</h2>
+  const itens = [
+    { nome: 'Janeiro', valor: 'Pago' },
+    { nome: 'Fevereiro', valor: 'Pendente' },
+    { nome: 'Março', valor: 'Pago' }
+  ];
 
-      <ul className="boletos-lista">
-        <li>
-          <span>Janeiro</span>
-          <strong>Pago</strong>
-        </li>
-
-        <li>
-          <span>Fevereiro</span>
-          <strong>Pendente</strong>
-        </li>
-
-        <li>
-          <span>Março</span>
-          <strong>Pago</strong>
-        </li>
-      </ul>
-    </section>
-  );
+  return <Listagem titulo="Listagem de Boletos" classe="boletos" itens={itens} />;
 }
 
 export default Boletos;
