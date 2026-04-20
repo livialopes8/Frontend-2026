@@ -1,28 +1,13 @@
-import './Requerimentos.css';
+import Listagem from '../../components/Listagem/Listagem';
 
 function Requerimentos() {
-  return (
-    <section className="requerimentos">
-      <h2>Listagem de Requerimentos</h2>
+  const itens = [
+    { nome: 'Declaração de matrícula', valor: 'Solicitar' },
+    { nome: 'Histórico escolar', valor: 'Solicitar' },
+    { nome: 'Segunda via de boleto', valor: 'Solicitar' }
+  ];
 
-      <ul className="requerimentos-lista">
-        <li>
-          <span>Declaração de matrícula</span>
-          <strong>Solicitar</strong>
-        </li>
-
-        <li>
-          <span>Histórico escolar</span>
-          <strong>Solicitar</strong>
-        </li>
-
-        <li>
-          <span>Segunda via de boleto</span>
-          <strong>Solicitar</strong>
-        </li>
-      </ul>
-    </section>
-  );
+  return <Listagem titulo="Listagem de Requerimentos" classe="requerimentos" itens={itens} />;
 }
 
 export default Requerimentos;

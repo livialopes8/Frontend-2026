@@ -1,28 +1,13 @@
-import './Notas.css';
+import Listagem from '../../components/Listagem/Listagem';
 
 function Notas() {
-  return (
-    <section className="notas">
-      <h2>Listagem de Notas</h2>
+  const itens = [
+    { nome: 'Construção de Frontend', valor: '8.5' },
+    { nome: 'Manutenção de Software e DevOps', valor: '9.0' },
+    { nome: 'Governança de TI', valor: '7.5' }
+  ];
 
-      <ul className="notas-lista">
-        <li>
-          <span>Construção de Frontend</span>
-          <strong>8.5</strong>
-        </li>
-
-        <li>
-          <span>Manutenção de Software e DevOps</span>
-          <strong>9.0</strong>
-        </li>
-
-        <li>
-          <span>Governança de TI</span>
-          <strong>7.5</strong>
-        </li>
-      </ul>
-    </section>
-  );
+  return <Listagem titulo="Listagem de Notas" classe="notas" itens={itens} />;
 }
 
 export default Notas;

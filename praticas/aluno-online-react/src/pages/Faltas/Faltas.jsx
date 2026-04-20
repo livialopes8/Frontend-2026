@@ -1,28 +1,13 @@
-import './Faltas.css';
+import Listagem from '../../components/Listagem/Listagem';
 
 function Faltas() {
-  return (
-    <section className="faltas">
-      <h2>Listagem de Faltas</h2>
+  const itens = [
+    { nome: 'Construção de Frontend', valor: '2 faltas' },
+    { nome: 'Manutenção de Software e DevOps', valor: '1 falta' },
+    { nome: 'Governança de TI', valor: '0 faltas' }
+  ];
 
-      <ul className="faltas-lista">
-        <li>
-          <span>Construção de Frontend</span>
-          <strong>2 faltas</strong>
-        </li>
-
-        <li>
-          <span>Manutenção de Software e DevOps</span>
-          <strong>1 falta</strong>
-        </li>
-
-        <li>
-          <span>Governança de TI</span>
-          <strong>0 faltas</strong>
-        </li>
-      </ul>
-    </section>
-  );
+  return <Listagem titulo="Listagem de Faltas" classe="faltas" itens={itens} />;
 }
 
 export default Faltas;
