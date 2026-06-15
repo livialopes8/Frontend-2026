@@ -1,0 +1,62 @@
+.faltas,
+.notas,
+.boletos,
+.requerimentos {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 6px solid #b91c1c;
+  max-width: 600px;
+}
+
+.faltas h2,
+.notas h2,
+.boletos h2,
+.requerimentos h2 {
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.faltas-lista,
+.notas-lista,
+.boletos-lista,
+.requerimentos-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.faltas-lista li,
+.notas-lista li,
+.boletos-lista li,
+.requerimentos-lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  background-color: #f9fafb;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.faltas-lista span,
+.notas-lista span,
+.boletos-lista span,
+.requerimentos-lista span {
+  color: #333;
+}
+
+.faltas-lista strong,
+.notas-lista strong,
+.boletos-lista strong,
+.requerimentos-lista strong {
+  color: #b91c1c;
+}
+
+.faltas-lista li:hover,
+.notas-lista li:hover,
+.boletos-lista li:hover,
+.requerimentos-lista li:hover {
+  background-color: #fee2e2;
+}
