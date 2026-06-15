@@ -1,6 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 function Menu() {
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    logout();
+    navigate("/login");
+  }
+
   return (
     <nav>
       <ul>
@@ -22,6 +31,10 @@ function Menu() {
 
         <li>
           <NavLink to="/requerimentos">Requerimentos</NavLink>
+        </li>
+
+        <li>
+          <button onClick={handleLogout}>Sair</button>
         </li>
       </ul>
     </nav>
