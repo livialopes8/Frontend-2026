@@ -1,17 +1,20 @@
-import Header from '../Header/Header';
-import Sidebar from '../Sidebar/Sidebar';
-import './Layout.css';
+import { Outlet } from "react-router-dom";
+import Menu from "../components/Menu";
 
-function Layout({ children }) {
+function Layout() {
   return (
-    <div className="layout">
-      <Sidebar />
-      <div className="layout-content">
-        <Header />
-        <main className="main-content">
-          {children}
-        </main>
-      </div>
+    <div style={{ display: "flex", minHeight: "100vh" }}>
+      
+      {/* MENU LATERAL */}
+      <aside style={{ width: "220px", background: "#f5f5f5" }}>
+        <Menu />
+      </aside>
+
+      {/* CONTEÚDO */}
+      <main style={{ flex: 1, padding: "20px" }}>
+        <Outlet />
+      </main>
+
     </div>
   );
 }
