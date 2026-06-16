@@ -1,16 +1,16 @@
-import { useNavigate } from "react-router-dom";
-import { Outlet } from "react-router-dom";
-import Listagem from "../../components/Listagem/Listagem";
+import { useNavigate, Outlet, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { listarRequerimentos } from "../../services/requerimentoService";
 import "./Requerimentos.css";
 
 function Requerimentos() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [requerimentos, setRequerimentos] = useState([]);
 
-  const itens = [
-    { nome: "Declaração de matrícula", valor: "Solicitar" },
-    { nome: "Histórico escolar", valor: "Solicitar" },
-    { nome: "Segunda via de boleto", valor: "Solicitar" },
-  ];
+  useEffect(() => {
+    listarRequerimentos().then((dados) => setRequerimentos(dados));
+  }, [location]);
 
   return (
     <div className="requerimentos-page">
@@ -20,7 +20,13 @@ function Requerimentos() {
         ➕ Novo Requerimento
       </button>
 
-      <Listagem titulo="Listagem de Requerimentos" classe="requerimentos" itens={itens} />
+      <ul>
+        {requerimentos.map((req) => (
+          <li key={req.id}>
+            <strong>{req.tipo}</strong> — {req.descricao} — {req.data}
+          </li>
+        ))}
+      </ul>
 
       <Outlet />
     </div>

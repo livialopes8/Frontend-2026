@@ -1,0 +1,29 @@
+{
+  "requerimentos": [
+    {
+      "id": "1",
+      "tipo": "declaracao",
+      "descricao": "Preciso de uma declaração de matrícula para fins de estágio.",
+      "data": "2026-05-26"
+    },
+    {
+      "tipo": "historico",
+      "descricao": "12122222222222222222222222222222222222222",
+      "data": "2026-06-16",
+      "id": "23zRqtXuqgM"
+    },
+    {
+      "tipo": "declaracao",
+      "descricao": "12333333333333333",
+      "data": "2026-06-17",
+      "id": "G__5BQOUF5k"
+    },
+    {
+      "tipo": "declaracao",
+      "descricao": "1234567889008654",
+      "data": "2026-06-17",
+      "id": "EkoQF8cIY54"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

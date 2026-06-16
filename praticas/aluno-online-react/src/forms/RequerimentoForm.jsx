@@ -1,14 +1,16 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { cadastrarRequerimento } from "../services/requerimentoService";
 import "./RequerimentoForm.css";
 
 function RequerimentoForm() {
   const navigate = useNavigate();
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-  function onSubmit(dados) {
-    console.log("Requerimento enviado:", dados);
+  async function onSubmit(dados) {
+    await cadastrarRequerimento(dados);
     reset();
+    navigate("/requerimentos");
   }
 
   return (
