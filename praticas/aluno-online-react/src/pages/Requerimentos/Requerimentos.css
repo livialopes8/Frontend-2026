@@ -1,0 +1,26 @@
+.requerimentos-page {
+  padding: 10px;
+}
+
+.requerimentos-page h1 {
+  font-size: 28px;
+  color: #1f1f1f;
+  margin-bottom: 20px;
+}
+
+.btn-novo {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding: 10px 20px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-novo:hover {
+  background-color: #1565c0;
+}
