@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-
 import "./Login.css";
 
 function Login() {
@@ -10,11 +9,18 @@ function Login() {
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [erro, setErro] = useState("");
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    login({ email });
-    navigate("/");
+    setErro("");
+
+    try {
+      await login(email, senha);
+      navigate("/");
+    } catch (err) {
+      setErro(err.message);
+    }
   }
 
   return (
@@ -38,6 +44,8 @@ function Login() {
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
           />
+
+          {erro && <span className="erro">{erro}</span>}
 
           <button type="submit" className="botao-entrar">
             Entrar

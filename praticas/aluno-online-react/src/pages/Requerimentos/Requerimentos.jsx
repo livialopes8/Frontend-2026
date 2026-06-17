@@ -1,15 +1,24 @@
 import { useNavigate, Outlet, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { listarRequerimentos } from "../../services/requerimentoService";
+import { useAuth } from "../../contexts/AuthContext";
 import "./Requerimentos.css";
 
 function Requerimentos() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { logout } = useAuth();
   const [requerimentos, setRequerimentos] = useState([]);
 
   useEffect(() => {
-    listarRequerimentos().then((dados) => setRequerimentos(dados));
+    listarRequerimentos()
+      .then((dados) => setRequerimentos(dados))
+      .catch((err) => {
+        if (err.message === "401") {
+          logout();
+          navigate("/");
+        }
+      });
   }, [location]);
 
   return (

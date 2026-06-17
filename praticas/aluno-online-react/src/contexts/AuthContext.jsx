@@ -1,26 +1,29 @@
 import { createContext, useContext, useState } from "react";
+import { autenticar } from "../services/authService";
 
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [autenticado, setAutenticado] = useState(
-    () => localStorage.getItem("autenticado") === "true"
+    () => !!localStorage.getItem("token")
   );
   const [usuario, setUsuario] = useState(
     () => JSON.parse(localStorage.getItem("usuario") || "null")
   );
 
-  function login(dadosUsuario) {
+  async function login(email, senha) {
+    const { usuario, token } = await autenticar(email, senha);
+
     setAutenticado(true);
-    setUsuario(dadosUsuario);
-    localStorage.setItem("autenticado", "true");
-    localStorage.setItem("usuario", JSON.stringify(dadosUsuario));
+    setUsuario(usuario);
+    localStorage.setItem("token", token);
+    localStorage.setItem("usuario", JSON.stringify(usuario));
   }
 
   function logout() {
     setAutenticado(false);
     setUsuario(null);
-    localStorage.removeItem("autenticado");
+    localStorage.removeItem("token");
     localStorage.removeItem("usuario");
   }
 
